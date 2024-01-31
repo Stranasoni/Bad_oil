@@ -44,6 +44,17 @@ public:
         }
         return nums.size();
     }
+    int removeElement2(vector<int>& nums, int val) {
+        size_t index = 0;
+        for (size_t i = 0; i < nums.size() ; ++i) {
+            if (nums[i] != val) {
+                nums[index] = nums[i];
+                index++;
+            }
+            
+       }
+        return index;
+    }
     
 };
 
@@ -54,7 +65,7 @@ int main()
     vector<int> v1 = { 2, 0 , 3 , 2 ,2 ,8};
     vector<int> v2 = { 1 };
     int y =0;
-    sol.removeElement(v1, 2);
+    sol.removeElement2(v1, 2);
     
     cin >> y;
 }
