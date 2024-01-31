@@ -57,15 +57,30 @@ public:
     }
     
 };
+class Solution3 {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        
+        size_t index = 0;
+        for (size_t i = 1; i < nums.size(); ++i) {
+            if (nums[index] != nums[i]) {
+                index++;
+                nums[index] = nums[i];             
+              
+            }
+        }
+        return ++index;
+    }
+};
 
 
 int main()
 {
-    Solution2 sol = Solution2();
-    vector<int> v1 = { 2, 0 , 3 , 2 ,2 ,8};
+    Solution3 sol = Solution3();
+    vector<int> v1 = {   0 , 3 ,3 , 3 , 8};
     vector<int> v2 = { 1 };
     int y =0;
-    sol.removeElement2(v1, 2);
+    sol.removeDuplicates(v1);
     
     cin >> y;
 }
