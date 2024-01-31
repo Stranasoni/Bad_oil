@@ -35,13 +35,27 @@ public:
 };
 
 
+class Solution2 {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        for (auto i = nums.begin(); i != nums.end();) {
+            if (*i == val) i = nums.erase(i);
+            else ++i;
+        }
+        return nums.size();
+    }
+    
+};
+
 
 int main()
 {
-    Solution sol = Solution();
-    vector<int> v1 = { 2, 0 };
+    Solution2 sol = Solution2();
+    vector<int> v1 = { 2, 0 , 3 , 2 ,2 ,8};
     vector<int> v2 = { 1 };
-    sol.merge(v1, 1, v2, 1);
-    std::cout << "Hello World!\n";
+    int y =0;
+    sol.removeElement(v1, 2);
+    
+    cin >> y;
 }
 
